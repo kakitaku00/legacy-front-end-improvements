@@ -1,12 +1,9 @@
 import $ from 'jquery';
+import EventBus, {
+  ADD_TODO,
+  REMOVE_TODO
+} from './EventBus'
 
-export const writeNextTodo = (nextTodoText) => {
-  $('#nextTodo').text('次のTODO: ' + nextTodoText);
-}
-
-export const writeTodoCount = (count) => {
-  $('#todoCount').text('(全' + count + '件)');
-}
 
 export const toggleTodoList = (count) => {
   if (count) {
@@ -26,6 +23,8 @@ export const toggleTodoEmpty = (count) => {
 
 export const removeTodo = ($element) => {
   $($element).closest('.todo').remove();
+
+  EventBus.$emit(REMOVE_TODO, index)
 }
 
 export const addTodo = () => {
@@ -41,4 +40,6 @@ export const addTodo = () => {
   wrapper.append(input);
   wrapper.append(deleteButton);
   $('#todoList').append(wrapper);
+
+  EventBus.$emit(ADD_TODO)
 }

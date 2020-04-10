@@ -1,20 +1,25 @@
+import './mount';
 import $ from 'jquery';
 import { readData } from './reader';
 import {
-  writeNextTodo,
   writeTodoCount,
   toggleTodoList,
   toggleTodoEmpty,
   addTodo,
   removeTodo
-} from './writer'
+} from './writer';
+import EventBus, {
+  UPDATE_NEXT_TODO_TEXT,
+  UPDATE_TODO_COUNT
+} from './EventBus';
 
 
 function updateAll() {
   const { count, nextTodoText } = readData();
 
-  writeNextTodo(nextTodoText);
-  writeTodoCount(count);
+  EventBus.$emit(UPDATE_NEXT_TODO_TEXT, nextTodoText);
+  EventBus.$emit(UPDATE_TODO_COUNT, count);
+
   toggleTodoList(count);
   toggleTodoEmpty(count);
 }
@@ -30,7 +35,7 @@ $(function() {
   });
 
   $('#todoList').on('click', '.delete', function() {
-    removeTodo(this);
+    removeTodo(this, $('#todoList').find('.delete').index(this));
     updateAll();
   });
 
