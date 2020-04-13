@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style scopoed>
+<style scoped>
 span {
   font-size: 0.8em;
 }

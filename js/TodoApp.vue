@@ -21,7 +21,7 @@ import TodoEmpty from "./TodoEmpty"
 import NextTodo from "./NextTodo"
 import TodoCount from "./TodoCount"
 import AddTodoButton from "./AddTodoButton"
-import * as store from './ObservableStore'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   components: {
@@ -33,16 +33,22 @@ export default {
   },
 
   computed: {
-    todoList: () => store.state.todoList,
-    todoCount: store.getters.todoCount,
-    visibleTodoList: store.getters.visibleTodoList,
-    nextTodo: store.getters.nextTodo
+    ...mapState([
+      'todoList'
+    ]),
+    ...mapGetters([
+      'todoCount',
+      'visibleTodoList',
+      'nextTodo'
+    ])
   },
 
   methods: {
-    addTodo: store.mutations.addTodo,
-    removeTodo: store.mutations.removeTodo,
-    updateTodo: store.mutations.updateTodo
+    ...mapMutations([
+      'addTodo',
+      'removeTodo',
+      'updateTodo'
+    ])
   }
 }
 </script>
