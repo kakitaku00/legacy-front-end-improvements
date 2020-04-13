@@ -1,6 +1,12 @@
 <template>
   <div>
-    <todo-list :todo-list="todoList" :visible="visibleTodoList" @update="updateTodo($event)"/>
+    <add-todo-button @click="addTodo"/>
+    <todo-list
+      :todo-list="todoList"
+      :visible="visibleTodoList"
+      @update="updateTodo($event)"
+      @click="removeTodo($event)"
+    />
     <todo-empty :visible='!visibleTodoList' />
     <div>
       <next-todo :next-todo-text="nextTodo" />
@@ -14,6 +20,7 @@ import TodoList from "./TodoList"
 import TodoEmpty from "./TodoEmpty"
 import NextTodo from "./NextTodo"
 import TodoCount from "./TodoCount"
+import AddTodoButton from "./AddTodoButton"
 import EventBus, {
   ADD_TODO,
   REMOVE_TODO
@@ -24,7 +31,8 @@ export default {
     TodoList,
     TodoEmpty,
     NextTodo,
-    TodoCount
+    TodoCount,
+    AddTodoButton
   },
   data() {
     return {

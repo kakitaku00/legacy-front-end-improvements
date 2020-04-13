@@ -1,5 +1,5 @@
 <template>
-  <span id="todoCount">(前{{count}}件)</span>
+  <span id="todoCount">(全{{count}}件)</span>
 </template>
 
 <script>
