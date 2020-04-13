@@ -6,17 +6,20 @@
 import EventBus, { UPDATE_NEXT_TODO_TEXT } from './EventBus';
 
 export default {
-  data() {
-    return {
-      nextTodoText: ''
-    };
+  props: {
+    nextTodoText: { type: String, default: '' }
   },
+  // data() {
+  //   return {
+  //     nextTodoText: ''
+  //   };
+  // },
 
-  beforeMount() {
-    EventBus.$on(UPDATE_NEXT_TODO_TEXT, (nextTodoText) => {
-      this.nextTodoText = nextTodoText
-    })
-  }
+  // beforeMount() {
+  //   EventBus.$on(UPDATE_NEXT_TODO_TEXT, (nextTodoText) => {
+  //     this.nextTodoText = nextTodoText
+  //   })
+  // }
 };
 </script>
 

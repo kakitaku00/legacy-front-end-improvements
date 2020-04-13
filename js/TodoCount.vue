@@ -3,20 +3,21 @@
 </template>
 
 <script>
-import EventBus, { UPDATE_TODO_COUNT } from './EventBus';
-
 export default {
-  data() {
-    return {
-      count: 0
-    }
+  props: {
+    count: { type: Number }
   },
+  // data() {
+  //   return {
+  //     count: 0
+  //   }
+  // },
 
-  beforeMount() {
-    EventBus.$on(UPDATE_TODO_COUNT, (count) => {
-      this.count = count;
-    })
-  }
+  // beforeMount() {
+  //   EventBus.$on(UPDATE_TODO_COUNT, (count) => {
+  //     this.count = count;
+  //   })
+  // }
 }
 </script>
 
