@@ -454,7 +454,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Tod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  props: {\n    count: {\n      type: Number\n    }\n  } // data() {\n  //   return {\n  //     count: 0\n  //   }\n  // },\n  // beforeMount() {\n  //   EventBus.$on(UPDATE_TODO_COUNT, (count) => {\n  //     this.count = count;\n  //   })\n  // }\n\n});\n\n//# sourceURL=webpack:///./js/TodoCount.vue?./node_modules/babel-loader/lib??ref--2!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  props: {\n    count: {\n      type: Number\n    }\n  }\n});\n\n//# sourceURL=webpack:///./js/TodoCount.vue?./node_modules/babel-loader/lib??ref--2!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 

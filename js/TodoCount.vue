@@ -6,18 +6,7 @@
 export default {
   props: {
     count: { type: Number }
-  },
-  // data() {
-  //   return {
-  //     count: 0
-  //   }
-  // },
-
-  // beforeMount() {
-  //   EventBus.$on(UPDATE_TODO_COUNT, (count) => {
-  //     this.count = count;
-  //   })
-  // }
+  }
 }
 </script>
 
